@@ -9,10 +9,7 @@
 import UIKit
 
 class BlueViewController : UIViewController {
- 
-    // This is the method that is invoked when the button is pressed
-    // in the blue view. We will discuss the @IBAction annotation
-    // In the fifth lecture. 
+  
     @IBAction func returnToOrangeController() {
         dismissViewControllerAnimated(true, completion: nil)
     }

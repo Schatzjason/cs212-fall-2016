@@ -9,5 +9,8 @@
 import UIKit
 
 class OrangeViewController : UIViewController {
+    
+    @IBAction func flipToBlue(sender: UIButton) {
         
+    }
 }

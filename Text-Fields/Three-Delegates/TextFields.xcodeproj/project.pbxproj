@@ -14,7 +14,6 @@
 		4D08C4861A126D0300A95F43 /* TextFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08C4851A126D0300A95F43 /* TextFieldsTests.swift */; };
 		4D08C4901A126EC400A95F43 /* EmojiTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08C48F1A126EC400A95F43 /* EmojiTextFieldDelegate.swift */; };
 		4D08C4921A12860200A95F43 /* ColorizerTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08C4911A12860200A95F43 /* ColorizerTextFieldDelegate.swift */; };
-		A086DDA91A8AF73700D7692D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A086DDA81A8AF73700D7692D /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 		4D08C4851A126D0300A95F43 /* TextFieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsTests.swift; sourceTree = "<group>"; };
 		4D08C48F1A126EC400A95F43 /* EmojiTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiTextFieldDelegate.swift; sourceTree = "<group>"; };
 		4D08C4911A12860200A95F43 /* ColorizerTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorizerTextFieldDelegate.swift; sourceTree = "<group>"; };
-		A086DDA81A8AF73700D7692D /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +61,6 @@
 		4D08C4611A126D0300A95F43 = {
 			isa = PBXGroup;
 			children = (
-				A086DDA81A8AF73700D7692D /* Storyboard.storyboard */,
 				4D08C46C1A126D0300A95F43 /* TextFields */,
 				4D08C4821A126D0300A95F43 /* TextFieldsTests */,
 				4D08C46B1A126D0300A95F43 /* Products */,
@@ -210,7 +207,6 @@
 			files = (
 				4D08C47A1A126D0300A95F43 /* LaunchScreen.xib in Resources */,
 				4D08C4771A126D0300A95F43 /* Images.xcassets in Resources */,
-				A086DDA91A8AF73700D7692D /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

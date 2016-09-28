@@ -29,9 +29,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.characterCountLabel.hidden = true
         
         // Set the three delegates
-        self.textField1.delegate = colorizerDelegate
-        self.textField2.delegate = emojiDelegate
-        self.textField3.delegate = self
+        self.textField1.delegate = self
+        self.textField2.delegate = colorizerDelegate
+        self.textField3.delegate = emojiDelegate
     }
 
     
