@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jHE-zV-yxj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="L70-ac-RI6">
+            <objects>
+                <navigationController id="jHE-zV-yxj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ftq-04-Yrc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YuV-eC-3vE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVO-hr-7cF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-640" y="240"/>
+        </scene>
         <!--Orange View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,56 +33,163 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myl-uQ-y31">
-                                <rect key="frame" x="73" y="86" width="72" height="30"/>
-                                <state key="normal" title="Show Blue"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TlX-09-Iu1">
+                                <rect key="frame" x="20" y="83" width="363" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSw-tR-u4y">
+                                <rect key="frame" x="20" y="413" width="363" height="30"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="showBlue:" destination="BYZ-38-t0r" eventType="touchDown" id="KFP-N0-mnK"/>
+                                    <action selector="showBlue:" destination="BYZ-38-t0r" eventType="touchDown" id="n4D-SO-WCg"/>
+                                    <segue destination="pgn-8U-Wyn" kind="show" id="CXm-8d-p45"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keC-wR-FLL">
+                                <rect key="frame" x="20" y="451" width="363" height="30"/>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ind-M5-hlA"/>
+                    <connections>
+                        <segue destination="UFH-DZ-t0z" kind="show" id="5O3-wO-0jy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="297"/>
+            <point key="canvasLocation" x="113" y="235"/>
         </scene>
-        <!--Blue View Controller-->
-        <scene sceneID="5wB-V2-KEw">
+        <!--Orange View Controller-->
+        <scene sceneID="gmY-yA-At9">
             <objects>
-                <viewController storyboardIdentifier="BlueViewController" id="mWd-vf-7xj" customClass="BlueViewController" customModule="TwoViewControllers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pgn-8U-Wyn" customClass="OrangeViewController" customModule="TwoViewControllers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bts-Yw-PVJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="3fU-Tb-gYe"/>
+                        <viewControllerLayoutGuide type="top" id="o3e-7Q-VOU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Afu-X8-Jss"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AGB-8u-pPs">
+                    <view key="view" contentMode="scaleToFill" id="UAx-m2-CVH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUg-0E-ubT">
-                                <rect key="frame" x="50" y="47" width="52" height="30"/>
-                                <state key="normal" title="dismiss"/>
-                                <connections>
-                                    <action selector="dismissMyself:" destination="mWd-vf-7xj" eventType="touchDown" id="Jct-pZ-ssN"/>
-                                </connections>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CLQ-fc-IEW">
+                                <rect key="frame" x="20" y="83" width="363" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-7B-t8d">
+                                <rect key="frame" x="20" y="413" width="363" height="30"/>
+                                <state key="normal" title="Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOQ-dp-Xu1">
-                                <rect key="frame" x="55" y="95" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKE-Fg-K6T">
+                                <rect key="frame" x="20" y="451" width="363" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="label" destination="bOQ-dp-Xu1" id="mqO-xw-VZj"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="zKK-w9-0dr"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hHl-hS-0ua" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yx8-Gd-oih" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="911" y="297"/>
+            <point key="canvasLocation" x="845" y="53"/>
+        </scene>
+        <!--Blue View Controller-->
+        <scene sceneID="Wn0-GJ-bQp">
+            <objects>
+                <viewController storyboardIdentifier="BlueViewController" id="UFH-DZ-t0z" customClass="BlueViewController" customModule="TwoViewControllers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BYZ-x1-HQ5"/>
+                        <viewControllerLayoutGuide type="bottom" id="lk6-jQ-1RF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lcD-Dw-ypM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.16656191028168199" green="0.15746362530636038" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="z0L-Qd-pP8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="608-bq-xy0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="783"/>
+        </scene>
+        <!--Orange View Controller-->
+        <scene sceneID="myn-Ff-n6S">
+            <objects>
+                <viewController id="wig-dC-d3r" customClass="OrangeViewController" customModule="TwoViewControllers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V7E-mr-5Fn"/>
+                        <viewControllerLayoutGuide type="bottom" id="r2v-zC-uT4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P5K-Pp-yuP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="i3m-p1-tdr">
+                                <rect key="frame" x="20" y="83" width="363" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHj-g0-RVf">
+                                <rect key="frame" x="20" y="413" width="363" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oC-nX-hwR">
+                                <rect key="frame" x="20" y="451" width="363" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="x6G-p7-UK5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMp-Ju-tA4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1519" y="23"/>
+        </scene>
+        <!--Orange View Controller-->
+        <scene sceneID="jhw-e2-bya">
+            <objects>
+                <viewController id="5f0-M3-GhA" customClass="OrangeViewController" customModule="TwoViewControllers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VdO-8M-edi"/>
+                        <viewControllerLayoutGuide type="bottom" id="AVk-Qe-skb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8P5-II-z0D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SWf-TV-lmM">
+                                <rect key="frame" x="20" y="83" width="363" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrf-7c-V5e">
+                                <rect key="frame" x="20" y="413" width="363" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYO-ny-Fn7">
+                                <rect key="frame" x="20" y="451" width="363" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xW3-Ob-5XC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xvd-jd-7Rs" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="733"/>
         </scene>
     </scenes>
 </document>

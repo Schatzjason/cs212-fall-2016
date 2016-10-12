@@ -14,17 +14,23 @@ enum RPS {
 
 class BlueViewController: UIViewController {
     
-    var usersThrow: RPS!
+    var number: Int!
     
     @IBOutlet var label: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+                
+        self.navigationItem.title = "Blue!"
+    }
+    
     @IBAction func dismissMyself(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController!.popViewControllerAnimated(true)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        label.text = "\(number)"
+                
+        //label.text = "\(number ?? -1)"
     }
 }

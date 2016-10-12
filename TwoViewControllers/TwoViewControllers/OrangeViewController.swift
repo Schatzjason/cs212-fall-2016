@@ -8,19 +8,44 @@
 
 import UIKit
 
+private enum SegueIdentifier: String {
+    case PresentBlue, PresentRed
+}
+
 class OrangeViewController: UIViewController {
 
+    let PresentBlue = "PresentBlue"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let backButton = UIBarButtonItem(title: "Go Orange", style: .Plain, target: nil, action:nil)
 
-    @IBAction func    showBlue(sender: UIButton) {
-        // 1. Get a Blue View Controller
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("BlueViewController")
-        let blueViewController = controller as! BlueViewController
+        self.navigationItem.title = "Orange!"
         
-        // 2. Configure the new View Controller
-        blueViewController.number = Int(arc4random()) % 3
+        self.navigationItem.backBarButtonItem = backButton
+    }
+    
+    func backWasPressed() {
+        print("back was pressed")
+    }
+    
+    @IBAction func showBlue(sender: UIButton) {
+        let c = self.storyboard!.instantiateViewControllerWithIdentifier("BlueViewController")
         
-        // 3. Present the BlueVC
-        showViewController(blueViewController, sender: self)
+        self.navigationController!.pushViewController(c, animated: true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let segueID = SegueIdentifier(rawValue: segue.identifier!)!
+        
+        switch segueID {
+        case .PresentBlue:
+            let blueVC = segue.destinationViewController as! BlueViewController
+            blueVC.number = 55
+        case .PresentRed:
+            print("Present red...")
+        }
     }
 }
 

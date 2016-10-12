@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001288121DA494620059C022 /* RPSMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001288111DA494620059C022 /* RPSMove.swift */; };
 		007542221D9B653B00A6AB91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007542211D9B653B00A6AB91 /* AppDelegate.swift */; };
 		007542241D9B653B00A6AB91 /* OrangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007542231D9B653B00A6AB91 /* OrangeViewController.swift */; };
 		007542271D9B653B00A6AB91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007542251D9B653B00A6AB91 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001288111DA494620059C022 /* RPSMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPSMove.swift; sourceTree = "<group>"; };
 		0075421E1D9B653B00A6AB91 /* TwoViewControllers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoViewControllers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007542211D9B653B00A6AB91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		007542231D9B653B00A6AB91 /* OrangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				007542351D9B66C700A6AB91 /* BlueViewController.swift */,
 				007542231D9B653B00A6AB91 /* OrangeViewController.swift */,
+				001288111DA494620059C022 /* RPSMove.swift */,
 				007542211D9B653B00A6AB91 /* AppDelegate.swift */,
 				007542251D9B653B00A6AB91 /* Main.storyboard */,
 				007542281D9B653B00A6AB91 /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001288121DA494620059C022 /* RPSMove.swift in Sources */,
 				007542241D9B653B00A6AB91 /* OrangeViewController.swift in Sources */,
 				007542361D9B66C700A6AB91 /* BlueViewController.swift in Sources */,
 				007542221D9B653B00A6AB91 /* AppDelegate.swift in Sources */,
@@ -290,6 +294,7 @@
 				007542321D9B653B00A6AB91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
