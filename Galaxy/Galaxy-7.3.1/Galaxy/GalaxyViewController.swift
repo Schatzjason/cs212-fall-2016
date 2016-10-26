@@ -19,50 +19,12 @@ class GalaxyViewController: UIViewController {
     @IBAction func downloadOrCancel() {
 
         if let task = self.task {
-            // Cancel
-            task.cancel()
-            self.task = nil
-            toggleViews(false)
-            
+            // Cancel Task, and nil it out
         } else {
-
-            let URLString = GalaxyURLs.nextURLString
-            let URL = NSURL(string: URLString)!
-            let request = NSURLRequest(URL: URL, cachePolicy: .ReturnCacheDataElseLoad , timeoutInterval: 10)
-            let session = NSURLSession.sharedSession()
-            
-            self.task = session.dataTaskWithRequest(request, completionHandler: processInBackground)
-            
-            self.task!.resume()
-            
-            toggleViews(true)
+            // Make a new task, and resume()
         }
     }
     
-    func processInBackground(data: NSData?, response: NSURLResponse?, error: NSError?) {
- 
-        // Handle the error
-        if let error = error {
-            print(error)
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                self.imageView.image = nil
-                self.toggleViews(false)
-            }
-            
-            return
-        }
-        
-        // Handle the data
-        let newImage = UIImage(data: data!)
-        self.task = nil
-
-        dispatch_async(dispatch_get_main_queue()) {
-            self.imageView.image = newImage
-            self.toggleViews(false)
-        }
-    }
-        
     func toggleViews(isDownloading: Bool) {
     
         // Button
