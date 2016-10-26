@@ -8,7 +8,7 @@ class GalaxyViewController: UIViewController {
     @IBOutlet var button: UIButton!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    var isDownloading: Bool = false
+    var task: NSURLSessionDataTask? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +18,34 @@ class GalaxyViewController: UIViewController {
     
     @IBAction func downloadOrCancel() {
 
-        isDownloading = !isDownloading
+        if let task = self.task {
+            // Cancel
+            task.cancel()
+            self.task = nil
+            toggleViews(false)
+            
+        } else {
+
+            let URLString = "https://cdn.spacetelescope.org/archives/images/screen/opo0328a.jpg"
+            let URL = NSURL(string: URLString)!
+            let session = NSURLSession.sharedSession()
+            
+            self.task = session.dataTaskWithURL(URL, completionHandler: processDownloadedData)
+            
+            self.task!.resume()
+            
+            toggleViews(true)
+        }
+    }
+    
+    func processDownloadedData(data: NSData?, response: NSURLResponse?, error: NSError?) {
+ 
+        let newImage = UIImage(data: data!)
         
-        toggleViews(isDownloading)
+        dispatch_async(dispatch_get_main_queue()) {
+            self.imageView.image = newImage
+            self.toggleViews(false)
+        }
     }
         
     func toggleViews(isDownloading: Bool) {
