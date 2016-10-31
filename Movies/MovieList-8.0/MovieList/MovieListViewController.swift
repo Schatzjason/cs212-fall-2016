@@ -161,7 +161,7 @@ class MovieListViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         // Parse the Data into a JSON Object
-        let JSONObject = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))
+        let JSONObject = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))
         
         // Insist that this object must be a dictionary
         guard let JSONDictionary = JSONObject as? [String : AnyObject] else {
@@ -170,7 +170,12 @@ class MovieListViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         // Print the object, for now, so we can take a look
-        print(JSONDictionary)
+        //print(JSONDictionary)
+        
+        // Pretty Print the string, for debugging
+        let prettyData = try! NSJSONSerialization.dataWithJSONObject(JSONObject, options: .PrettyPrinted)
+        let prettyString = String(data: prettyData, encoding: NSUTF8StringEncoding)
+        print(prettyString)
         
         let movieDictionaries = JSONDictionary[TMDB.Keys.Results] as! [[String : AnyObject]]
         
