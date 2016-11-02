@@ -55,14 +55,14 @@ struct TMDBURLs {
         
         let baseURL = NSURL(string: TMDB.Constants.BaseImageURL)!
         
-        return baseURL.URLByAppendingPathComponent(size!)!.URLByAppendingPathComponent(filePath)!
+        return baseURL.URLByAppendingPathComponent(size!).URLByAppendingPathComponent(filePath)
     }
     
     static func URLForProfileWithPath(filePath: String, size: String? = TMDB.Images.ProfileSizes[1]) -> NSURL {
         
         let baseURL = NSURL(string: TMDB.Constants.BaseImageURL)!
         
-        return baseURL.URLByAppendingPathComponent(size!)!.URLByAppendingPathComponent(filePath)!
+        return baseURL.URLByAppendingPathComponent(size!).URLByAppendingPathComponent(filePath)
     }
     
     
