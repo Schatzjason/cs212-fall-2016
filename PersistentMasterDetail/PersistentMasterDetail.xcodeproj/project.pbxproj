@@ -61,11 +61,11 @@
 				4D28904E1DDBFD6400C04325 /* AppDelegate.swift */,
 				4D2890501DDBFD6400C04325 /* MasterViewController.swift */,
 				4D2890521DDBFD6400C04325 /* DetailViewController.swift */,
+				4D2890621DDC124100C04325 /* DateStorage.swift */,
 				4D2890541DDBFD6400C04325 /* Main.storyboard */,
 				4D2890571DDBFD6400C04325 /* Assets.xcassets */,
 				4D2890591DDBFD6400C04325 /* LaunchScreen.storyboard */,
 				4D28905C1DDBFD6400C04325 /* Info.plist */,
-				4D2890621DDC124100C04325 /* DateStorage.swift */,
 			);
 			path = PersistentMasterDetail;
 			sourceTree = "<group>";

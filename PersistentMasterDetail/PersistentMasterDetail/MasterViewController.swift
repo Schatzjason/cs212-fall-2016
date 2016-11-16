@@ -12,43 +12,9 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     
-    var objects = DateStorage()
+    var dateStorage = DateStorage()
     
-    func readDates() -> [String]? {
-        
-        // See if there is data in the file
-        guard let data = NSData(contentsOf: datesURL) as? Data else {
-            return nil
-        }
-        
-        // Unserialize the data
-        let options = JSONSerialization.ReadingOptions(rawValue: 0)
-        
-        return try? JSONSerialization.jsonObject(with: data, options: options) as! [String]
-    }
     
-    func writeData() {
-     
-        // create JSON Data from "objects"
-        let data = try! JSONSerialization.data(withJSONObject: objects, options: .prettyPrinted)
-        
-        // Print the URL for debugging
-        print(datesURL)
-        
-        // Write the data to "datesFile" URL
-        try! data.write(to: datesURL)
-    }
-    
-    var datesURL: URL {
-        return documentURL.appendingPathComponent("dates.json")!
-    }
-    
-    var documentURL: NSURL {
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        
-        return NSURL(fileURLWithPath: path)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -61,7 +27,7 @@ class MasterViewController: UITableViewController {
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
-        self.objects = readDates() ?? [String]()
+        self.dateStorage = DateStorage()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -75,11 +41,12 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate().description, at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        self.tableView.insertRows(at: [indexPath], with: .automatic)
         
-        writeDates()
+        dateStorage.insert(NSDate().description, at:0)
+
+        let indexPath = IndexPath(row: 0, section: 0)
+        
+        self.tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
     // MARK: - Segues
@@ -87,7 +54,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row]
+                let object = dateStorage.dates[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
@@ -103,13 +70,13 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return dateStorage.dates.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row]
+        let object = dateStorage.dates[indexPath.row]
         cell.textLabel!.text = object.description
         return cell
     }
@@ -121,10 +88,11 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
+            
+            dateStorage.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
             
-            writeDates()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
