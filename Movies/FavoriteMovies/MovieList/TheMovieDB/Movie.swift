@@ -25,6 +25,8 @@ struct Movie {
     // Step 1.1
     var overview: String?
     
+    // Initialize a Movie from a JSON Dictionary
+    
     init?(dictionary: [String : AnyObject]) {
         // Mandatory values
         guard
@@ -51,6 +53,19 @@ struct Movie {
         self.id = id
         self.posterPath = posterPath
         self.overview = overview
+    }
+    
+    // Produce a JSON Dictionary for this movie
+    
+    var JSONDictionary: [String : AnyObject] {
+        var jsond = [String : AnyObject]()
+        
+        jsond[Keys.Title] = self.title
+        jsond[Keys.Overview] = self.overview
+        jsond[Keys.ID] = self.id
+        jsond[Keys.PosterPath] = self.posterPath
+        
+        return jsond
     }
 }
 
